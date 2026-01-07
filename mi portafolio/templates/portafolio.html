@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>El portafolio de Nicolas Ignacio Topa</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='estilo.css') }}">
+</head>
+
+<body>
+  <header>
+    <h1>El portafolio de Nicolas Ignacio Topa</h1>
+  </header>
+
+  <main>
+    {% for pieza in datos %}
+    <article class="card" style="--bg: url('{{ url_for('static', filename=pieza.imagen) }}')">
+      <h3>{{ pieza.nombre_del_centro }}</h3>
+      <time>{{ pieza.duracion }}</time>
+
+      <div class="descripcion">
+        <p>{{ pieza.descripcion }}</p>
+      </div>
+    </article>
+    {% endfor %}
+  </main>
+
+  <footer></footer>
+</body>
+</html>

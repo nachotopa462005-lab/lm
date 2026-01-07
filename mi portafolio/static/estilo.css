@@ -1,0 +1,89 @@
+/* Reset */
+body,html{
+  width:100%;
+  height:100%;
+  margin:0;
+  font-family:Ubuntu,sans-serif;
+}
+
+body{
+  display:flex;
+  flex-direction:column;
+  text-align:center;
+  margin:0;
+  font-family: Ubuntu, sans-serif;
+}
+
+main{
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  justify-items: center;
+  margin-top: 40px;
+  width: 90%;   /* Aumenta el ancho del grid */
+  max-width: 1200px;
+}
+
+
+.card{
+  background-color: #333;
+  color: white;
+  width: 200px;
+  height: 200px;
+  padding: 20px;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-end;
+  position:relative;
+  overflow:hidden;
+  border-radius:10px;
+  transition: all 0.4s ease;
+}
+
+
+
+/* Fondo difuminado */
+.card::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background-image:var(--bg);
+  background-size:cover;
+  background-position:center;
+  filter:blur(8px) brightness(0.6);
+  transform:scale(1.1);
+  z-index:-1;
+}
+
+.card:hover{
+  transform: scale(1.2);
+  z-index: 10;
+  height: 300px;
+}
+
+.card:hover::before{
+  filter: blur(4px) brightness(0.5);
+}
+
+/* Descripción */
+.descripcion{
+  max-height:0;
+  opacity:0;
+  transition:all 0.4s ease;
+}
+
+.card:hover .descripcion{
+  max-height:200px;
+  opacity:1;
+}
+
+/* Texto sobre el fondo */
+.card *{
+  position:relative;
+  z-index:1;
+}
+
+/* Centrar último item */
+.card:last-child{
+  grid-column:2;
+}

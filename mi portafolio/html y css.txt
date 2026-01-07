@@ -1,0 +1,81 @@
+<!doctype html>
+<html>
+  <head>
+    <title>El portafolio de Nicolas Ignacio Topa</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="static/estilo.css">
+  </head>
+  <body>
+    <header>
+      <h1>El portafolio de Nicolas Ignacio Topa</h1>
+    </header>
+    <main>
+      {% for pieza in datos %}
+        <article>
+          <h3>{{pieza.nombre_del_centro}}</h3>
+          <time>{{pieza.duracion}}</time>
+
+          <div class="descripcion">
+            <p>{{ pieza.descripcion }}</p>
+          </div>
+        </article>
+      {% endfor %}
+    </main>
+    <footer>
+    </footer>
+  </body>
+</html>
+
+
+body,html{width:100%;height:100%;padding:0px;margin:0px;
+    font-family:Ubuntu,sans-serif;}
+    body{display:flex;justify-content:center;align-items:center;
+    flex-direction:column;text-align:center;}
+    main{
+      display:grid;
+      grid-template-columns:repeat(3, 1fr);
+      gap:40px;
+      justify-items:center;
+    }
+
+    article:last-child{
+      grid-column:2;
+    }
+    
+    article{
+      width:200px;
+      height:200px;
+      background:lightgrey;
+      padding:20px;
+      display:flex;
+      flex-direction:column;
+      justify-content:flex-end;
+      transition:all 0.4s ease;
+      position:relative;
+      overflow:hidden;   /* CLAVE */
+      border-radius:10px;
+    }
+    
+    /* Descripción oculta */
+    .descripcion{
+      max-height:0;
+      opacity:0;
+      transition:all 0.4s ease;
+    }
+    
+    /* Hover tipo Netflix */
+    article:hover{
+      transform:scale(1.2);
+      z-index:1000;
+      height:300px; /* se expande */
+    }
+    
+    /* Mostrar descripción */
+    article:hover .descripcion{
+      max-height:200px;
+      opacity:1;
+    }
+    footer{padding:20px;display:flex;gap:10px;}
+    footer img{width:40px;}
+    
+    
