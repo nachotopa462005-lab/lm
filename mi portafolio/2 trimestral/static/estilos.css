@@ -1,0 +1,88 @@
+body {
+    margin: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    background-color: #fafafa;
+    color: #222;
+}
+
+header {
+    padding: 40px;
+    border-bottom: 1px solid #eaeaea;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 32px;
+    font-weight: 600;
+}
+
+nav a {
+    margin-right: 20px;
+    text-decoration: none;
+    color: #555;
+    font-size: 15px;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 60px auto;
+    padding: 0 20px;
+}
+
+h2 {
+    font-size: 22px;
+    margin-bottom: 25px;
+    font-weight: 500;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
+}
+
+.card {
+    padding: 25px;
+    border: 1px solid #eaeaea;
+    border-radius: 8px;
+    background-color: #fff;
+}
+
+.card h3 {
+    margin-top: 0;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.card p {
+    font-size: 14px;
+    color: #555;
+    line-height: 1.6;
+}
+
+ul {
+    padding: 0;
+    list-style: none;
+}
+
+ul li {
+    margin-bottom: 10px;
+}
+
+footer {
+    text-align: center;
+    padding: 40px;
+    font-size: 14px;
+    color: #aaa;
+    border-top: 1px solid #eaeaea;
+}
+.estudio-card {
+    position: relative;
+}
+
+.logo-estudio {
+    width: 40px;
+    height: auto;
+    margin-bottom: 15px;
+    opacity: 0.85;
+}
